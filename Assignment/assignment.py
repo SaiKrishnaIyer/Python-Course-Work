@@ -1,66 +1,63 @@
-# ----------------------------
-# Product Information System
-# ----------------------------
+print("Welcome! to COURSES ON COURSERA")
+print("-----------------------------------")
 
-# Task 1: Take Product Details as Input
+# Task 1: Input Collection
 
-product_id = int(input("Enter Product ID: "))
-product_name = input("Enter Product Name: ")
-price = float(input("Enter Price: "))
-categories = input("Enter Categories (comma-separated): ").split(",")
+course_id = int(input("Enter Course ID: "))
+course_name = input("Enter Course Name: ")
+course_price = float(input("Enter Course Price: "))
 
-available_stock = int(input("Enter Available Stock: "))
-sold_stock = int(input("Enter Sold Stock: "))
-stock_details = (available_stock, sold_stock)
+# Categories as list (no loop)
+categories = input("Enter Course Categories: ")
+course_categories = categories.split(",") 
 
-discount = float(input("Enter Discount Percentage: "))
+course_progress = float(input("Enter Course Progress Percentage: "))
 
-features = set(input("Enter Product Features (comma-separated): ").split(","))
+# Assessment scores as list of floats (no loop)
+scores = input("Enter Assessment Scores: ")
+assessment_scores = scores.split(",")
 
-supplier_name = input("Enter Supplier Name: ")
-supplier_contact = input("Enter Supplier Contact Number: ")
-supplier_location = input("Enter Supplier Location: ")
+completed_assignments = int(input("Enter Completed Assignments: "))
+total_assignments = int(input("Enter Total Assignments: "))
+assignment_tuple = (completed_assignments, total_assignments)
 
-supplier_details = {
-    "name": supplier_name,
-    "contact": supplier_contact,
-    "location": supplier_location
+# Certificates as set (no loop)
+raw_certificates = input("Enter Earned Certificates: ")
+course_certificates = set(raw_certificates.split(","))
+
+# Instructor details (dict)
+instructor_name = input("Enter Instructor Name: ")
+instructor_contact = input("Enter Instructor Contact Email: ")
+instructor_location = input("Enter Instructor Location: ")
+
+instructor_details = {
+    "name": instructor_name,
+    "contact": instructor_contact,
+    "location": instructor_location
 }
 
-# -------------------------------------
-# Task 2: Display Using Formatting Methods
-# -------------------------------------
+# Task 2: Display with all formatting methods
+print("\nCoursera Course Information:")
+print("-----------------------------------")
 
-print("\n---------------------------")
-print("Product Information Output")
-print("---------------------------\n")
+# 1. Using comma separation
+print("Course ID, Name, Price:", course_id, course_name, course_price, sep=", ")
 
-# 1. Using Comma Separation
-print("1. Using Comma Separation (sep=',')")
-print("Product ID, Name, Price:", product_id, product_name, price, sep=", ")
-print()
-
-# 2. Using Percentage Formatting (% operator)
-print("2. Using Percentage Formatting (% operator)")
-print("Product Discount: %.2f%%" % discount)
-print()
+# 2. Using percentage formatting
+print("Course Progress: %.2f%%" % course_progress)
 
 # 3. Using f-strings
-print("3. Using f-strings (f-strings)")
-print(f"Product Name: {product_name}")
-print(f"Price: ₹{price}")
-print(f"Discount: {discount}%")
-print(f"Stock Available: {stock_details[0]} units")
-print()
+print(f"Course Name: {course_name}")
+print(f"Price: ${course_price:.2f}")
+print(f"Assessments Entered: {assessment_scores}")
+print(f"Assignments Completed: {assignment_tuple[0]} out of {assignment_tuple[1]}")
+print(f"Certificates Earned: {course_certificates}")
 
 # 4. Using .format() method
-print("4. Using .format() method")
-print("Supplier Details: Name - {}, Contact - {}, Location - {}"
-      .format(supplier_details['name'],
-              supplier_details['contact'],
-              supplier_details['location']))
-print()
+print("Instructor Details: Name - {}, Contact - {}, Location - {}".format(
+    instructor_details["name"],
+    instructor_details["contact"],
+    instructor_details["location"]
+))
 
-# Optional: Display all collected data
-print("All Categories:", categories)
-print("Features:", features)
+print("-----------------------------------")
