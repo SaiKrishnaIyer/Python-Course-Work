@@ -60,6 +60,7 @@ for row in range(n):
             print(' ', end=' ')
     print()
 
+
 n = int(input("Enter the size: "))
 
 for row in range(n):
@@ -84,6 +85,7 @@ for row in range(n):
             print(' ', end=' ')
     print()
 
+# Draw an X pattern
 n = int(input("Enter the size: "))
 
 for row in range(n):
