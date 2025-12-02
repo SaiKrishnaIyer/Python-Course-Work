@@ -86,6 +86,13 @@ for row in range(n):
     print()
 
 # Draw an X pattern
+'''
+*       * 
+  *   *   
+    *     
+  *   *   
+*       * 
+'''
 n = int(input("Enter the size: "))
 
 for row in range(n):
@@ -94,4 +101,107 @@ for row in range(n):
             print('*', end=' ')
         else:
             print(' ', end=' ')
+    print()
+
+
+#. For Alternate Numbers
+'''
+1 0 1 0 1
+1 0 1 0 1
+1 0 1 0 1
+1 0 1 0 1
+1 0 1 0 1
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        if j % 2 == 0:
+            print(1, end=' ')
+        else:
+            print(0, end=' ')
+    print()
+
+#. Reverse the above one
+'''
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+0 1 0 1 0
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        print(j % 2, end=' ')
+
+    print()
+
+#. Negative Values
+'''
+-1 -2 -1 -2 -1
+-1 -2 -1 -2 -1
+-1 -2 -1 -2 -1
+-1 -2 -1 -2 -1
+-1 -2 -1 -2 -1
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        print(~(j % 2), end=' ')
+
+    print()
+
+#. Boolean values
+'''
+True False True False True 
+True False True False True 
+True False True False True 
+True False True False True 
+True False True False True 
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        print(not (j % 2), end=' ')
+
+    print()
+
+#. 0 and 1 Right-Inverted triangle
+'''
+1 0 0 0 0 
+1 1 0 0 0 
+1 1 1 0 0 
+1 1 1 1 0 
+1 1 1 1 1 
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        if i < j:
+            print(0, end =' ')
+        else:
+            print(1, end =' ')
+    print()
+    
+#. House Roof Pattern
+'''
+    *     
+  *   *   
+* * * * * 
+*       * 
+*       * 
+'''
+n = int(input("Enter the size: "))
+
+for i in range(n):
+    for j in range(n):
+        if i == n // 2 or (j == 0 and i > n // 2) or (j == n - 1 and i > n // 2) or (i + j == n // 2 and i < n // 2) or (j - i == n // 2 and i < n // 2):
+            print('*', end =' ')
+        else:
+            print(' ', end =' ')
     print()
