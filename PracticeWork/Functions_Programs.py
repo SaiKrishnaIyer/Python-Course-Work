@@ -144,3 +144,163 @@ n=int(input())
 print(sum_n(n))
 
 #20. Reverse a String Using Recursion
+def reverse_string(s):
+    if len(s) == 0:
+        return s
+    else:
+        return s[-1] + reverse_string(s[:-1])
+s = input("Enter a string: ")
+print(reverse_string(s))
+
+#21. Power of a Number (a^b using recursion)
+def power(a, b):
+    if b == 0:
+        return 1
+    else:
+        return a * power(a, b - 1)
+a = int(input("Enter base (a): "))
+b = int(input("Enter exponent (b): "))
+print(power(a, b))
+
+#22. Sum of Digits Using Recursion
+def sum_of_digits(n):
+    if n == 0:
+        return 0
+    else:
+        return n % 10 + sum_of_digits(n // 10)
+n = int(input("Enter a number: "))
+print(sum_of_digits(n))
+
+#23. Check Palindrome String Using Recursion
+def is_palindrome(s):
+    if len(s) <= 1:
+        return True
+    if s[0] != s[-1]:
+        return False
+    return is_palindrome(s[1:-1])
+s = input("Enter a string: ")
+print(is_palindrome(s))
+
+#24. GCD of Two Numbers Using Recursion
+def gcd(a, b):
+    if b == 0:
+        return a
+    else:
+        return gcd(b, a % b)
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+print(gcd(a, b))
+
+#25. Maximum of Three Numbers Using max()
+def max_of_three(a, b, c):
+    return max(a, b, c)
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
+print(max_of_three(a, b, c))
+
+#26. Sort a List Using sorted()
+def sort_list(lst):
+    return sorted(lst)
+lst = list(map(int, input("Enter list elements separated by space: ").split()))
+print(sort_list(lst))
+
+#27. Sum of Elements Using sum()
+def sum_of_elements(lst):
+    return sum(lst)
+lst = list(map(int, input("Enter list elements separated by space: ").split()))
+print(sum_of_elements(lst))
+
+#28. Find Data Type Using type()
+def find_data_type(var):
+    return type(var)
+var = eval(input("Enter a variable: "))
+print(find_data_type(var))
+
+#29. Print Even Numbers up to N
+def print_even_numbers(n):
+    for i in range(2, n + 1, 2):
+        print(i, end=' ')
+n = int(input("Enter a number: "))
+print_even_numbers(n)
+
+#30. Return List of Squares
+def list_of_squares(n):
+    return [i**2 for i in range(1, n + 1)]
+n = int(input("Enter a number: "))
+print(list_of_squares(n))
+
+#31. Check if Number is Prime
+def is_prime(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+n = int(input("Enter a number: "))
+print(is_prime(n))
+
+#32. Count Vowels in a String
+def count_vowels(s):
+    vowels = 'aeiouAEIOU'
+    count = 0
+    for char in s:
+        if char in vowels:
+            count += 1
+    return count
+s = input("Enter a string: ")
+print(count_vowels(s))
+
+#33. Multiply by 2 Using Lambda
+multiply_by_2 = lambda x: x * 2
+n = int(input("Enter a number: "))
+print(multiply_by_2(n))
+
+#34. Filter Even Numbers Using Lambda
+filter_even = lambda lst: list(filter(lambda x: x % 2 == 0, lst))
+lst = list(map(int, input("Enter list elements separated by space: ").split()))
+print(filter_even(lst))
+
+#35. Filter Even Numbers Using filter() and Lambda
+def filter_even_numbers(lst):
+    return list(filter(lambda x: x % 2 == 0, lst))
+lst = list(map(int, input("Enter list elements separated by space: ").split()))
+print(filter_even_numbers(lst))
+
+#36. Sort Tuples by Second Value Using Lambda
+def sort_tuples(tuples_list):
+    return sorted(tuples_list, key=lambda x: x[1])
+tuples_list = [(1, 3), (4, 1), (5, 2)]
+print(sort_tuples(tuples_list))
+
+#37. Access Global Variable Inside Function
+x = 10
+def access_global():
+    global x
+    return x
+print(access_global())
+
+#38. Modify Global Variable Inside Function
+y = 5
+def modify_global():
+    global y
+    y += 10
+    return y
+print(modify_global())
+
+#39. Use Local Variable with Same Name as Global
+z = 20
+def local_variable():
+    z = 15
+    return z
+print(local_variable())
+print(z)
+
+#40. Compare Global and Local Variables
+x = 10
+def compare_variables():
+    x = 20
+    print("Local x:", x)
+compare_variables()
+print("Global x:", x)
