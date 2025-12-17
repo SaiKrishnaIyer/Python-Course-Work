@@ -1,4 +1,4 @@
-#1.
+#1. Compute Geometric Values (Math Module)
 import math
 
 def circle_geometry(r):
@@ -15,7 +15,7 @@ circle_geometry = lambda r: (round(math.pi * r * r, 2), round(2 * math.pi * r, 2
 print(circle_geometry(7))
 print(circle_geometry(2.5))
 
-#2.
+#2. Random Team Picker (Random Module)
 import random
 def pick_random_team(members, team_size):
     print(random.choices(members, k = team_size))
@@ -23,13 +23,12 @@ def pick_random_team(members, team_size):
 pick_random_team(["Alice", "Bob", "Charlie", "David"],2)
 pick_random_team(["A", "B", "C", "D", "E"],3)
 
-#3.
+#3. Temperature Alert (Lambda + Filter)
 temp = [36, 42, 39,45, 41]
 res = list(filter(lambda i : i > 40, temp))
 print(res)
 
-#4.
-
+#4. Identify Prime Numbers (Recursion)
 n = int(input("Enter the number: "))
 c = 0
 for i in range(2, n // 2 + 1):
