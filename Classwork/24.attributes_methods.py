@@ -100,6 +100,10 @@ class Instagram:
     def viewPost(self):
         return self._post
 
+    @viewPost.setter
+    def viewPost(self, post):
+        self._post.append(post)
+
 randheer = Instagram("Randheer", "r@123")
 print(f"Before Username: {randheer.username}")
 randheer.username = "Sumanth"
@@ -109,4 +113,7 @@ print(f"Before Password: {randheer.getPassword()}")
 randheer.setPassword("Sumanth@123")
 print(f"After Password: {randheer.getPassword()}")
 
+print(randheer.viewPost)
+randheer.viewPost = "hello"
+randheer.viewPost = "First Reel"
 print(randheer.viewPost)
