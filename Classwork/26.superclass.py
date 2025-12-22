@@ -28,4 +28,3 @@ class Whatsapp_v3(Whatsapp_v1, Whatsapp_v2):
         
 krishna = Whatsapp_v3()
 krishna.status()
-
